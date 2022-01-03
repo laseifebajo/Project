@@ -20,7 +20,7 @@ app.use(function (req, res, next) {
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(bodyParser.json())
-
+//mongodb is where the connection is made and where the data goes to once a player is added
 const myConectionsString = 'mongodb+srv://admin:Laseife123@cluster0.3x2zx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 mongoose.connect(myConectionsString, { useNewUrlParser: true });
 
@@ -40,6 +40,7 @@ var StatModel = mongoose.model("stat", statsSchema);
 
 
 
+////this get request is used to retrieve and request data from a specified resource in a server.
 
 
 app.get('/api/stats', (req, res) => {
@@ -97,6 +98,7 @@ app.get('/api/stats', (req, res) => {
     // })
 });
 
+//this get request is used to retrieve and request data from a specified resource in a server.
 app.get('/api/stats/:id', (req,res)=>{
     console.log(req.params.id)
 
@@ -105,7 +107,7 @@ app.get('/api/stats/:id', (req,res)=>{
     })
 
 })
-
+//this put request is used to updates the existing resource.
 app.put('/api/stats/:id', (req,res) => {
     console.log("Update Player: " +req.params.id);
     console.log(req.body);
@@ -115,6 +117,7 @@ app.put('/api/stats/:id', (req,res) => {
             res.send(data);
         })
 }) 
+// this is how the resource is deleted from the server
 
 app.delete('/api/stats/:id', (req,res)=>{
     console.log("Delete Player:  "+req.params.id);
@@ -130,7 +133,7 @@ app.delete('/api/stats/:id', (req,res)=>{
 
 
 app.post('/api/stats', (req, res) => {
-
+    //talking to the console
     console.log("Player Receieved");
     console.log(req.body.name);
     console.log(req.body.goals);
@@ -144,7 +147,7 @@ app.post('/api/stats', (req, res) => {
         picture: req.body.picture
 
     })
-
+    //talking to the console
     res.send('Item Added');
 })
 
