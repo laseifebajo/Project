@@ -55,6 +55,7 @@ export class Info extends React.Component {
             assists: this.state.Assists,
             picture: this.state.Picture
         }
+        //error catcher
         axios.post('http://localhost:4000/api/stats',newStat)
         .then((res)=>{
             console.log(res);
@@ -63,6 +64,8 @@ export class Info extends React.Component {
             console.log(err);
         })
     }
+    
+    //text boxes , buttons
 
     render() {
         return (
