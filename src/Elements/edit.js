@@ -8,13 +8,13 @@ export class Edit extends React.Component {
 
     constructor() {
         super();
-
+        //this bins all the different elements
         this.onSubmit = this.onSubmit.bind(this);
         this.onChangeName = this.onChangeName.bind(this);
         this.onChangeGoals = this.onChangeGoals.bind(this);
         this.onChangeAssists = this.onChangeAssists.bind(this);
         this.onChangePicture = this.onChangePicture.bind(this);
-
+        // represent  information about the component's 
         this.state = {
             Name: '',
             Goals: '',
@@ -67,7 +67,7 @@ export class Edit extends React.Component {
             Picture: e.target.value
         });
     }
-
+    
     onSubmit(e) {
         e.preventDefault();
         alert("Player Name: " + this.state.Name + " " + this.state.Name +"scored" + this.state.Goals + "goals in his career" + " " +  this.state.Name +"completed" + this.state.Assists + "assists in his career" +this.state.Picture );
@@ -79,7 +79,7 @@ export class Edit extends React.Component {
             picture: this.state.Picture,
             _id: this.state._id
         }
-
+        //this is where the error is caught
         axios.put('http://localhost:4000/api/stats/' +this.state._id,newStat)
         .then(res=>{
             console.log(res.data)
@@ -96,7 +96,7 @@ export class Edit extends React.Component {
         //     console.log(err);
         // })
     }
-
+    //this is where all the input boxes and the button to submit is created
     render() {
         return (
             <div className='App'>
