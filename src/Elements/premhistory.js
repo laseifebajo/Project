@@ -1,7 +1,7 @@
 import React from 'react';
 
 export class Premhistory extends React.Component {
-
+    //html that was written to display on to the screen, aslo has a link to a image address at the bottom
     render() {
         return (
             <div>
