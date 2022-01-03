@@ -6,13 +6,13 @@ import axios from 'axios';
 
 
 export class Statsinfo extends React.Component {
-
+    //movie delete function is binded here
     constructor(){
     super();
 
     this.DeleteMovie = this.DeleteMovie.bind(this);
     }
-
+    //the page is refreshed by implementing the reload data and the desired url to be returned to after hitting the delete button
     DeleteMovie(e){
         e.preventDefault();
         console.log("Delete: "+this.props.stat._id);
@@ -33,7 +33,7 @@ export class Statsinfo extends React.Component {
                 <p>{this.props.stat.Assist}</p>
                 <img src={this.props.stat.Picture} width="200" height="200"></img> */}
 
-
+                //this is formatting to make everything that is displayed to look nice
                 <Card>
                     <Card.Header>{this.props.stat.name}</Card.Header>
                     <Card.Body>
